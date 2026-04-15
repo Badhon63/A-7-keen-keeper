@@ -7,9 +7,13 @@ import "./index.css";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+import { TimelineProvider } from "./context/TimelineContext";
+
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
-    <ToastContainer position="top-right" autoClose={2000} />
+    <TimelineProvider>
+      <RouterProvider router={router} />
+      <ToastContainer position="top-right" autoClose={2000} />
+    </TimelineProvider>
   </React.StrictMode>
 );

@@ -1,10 +1,15 @@
 import { useLocation } from "react-router-dom";
 import { FaPhoneAlt, FaCommentDots, FaVideo, FaClock, FaArchive, FaTrash } from "react-icons/fa";
 import { toast } from "react-toastify";
+import { useTimeline } from "../../context/TimelineContext";
 
 const FriendDetails = () => {
+
+  const { addEvent } = useTimeline();
+
   const handleAction = (type) => {
     toast.success(`${type} with ${friend.name}`);
+    addEvent(type, friend.name);
   };
   const { state: friend } = useLocation();
 
@@ -102,31 +107,31 @@ const FriendDetails = () => {
 
           <div className="grid grid-cols-3 gap-3">
 
-  <button
-    onClick={() => handleAction("Call")}
-    className="bg-base-300 cursor-pointer hover:bg-base-200 w-full py-4 rounded-lg flex flex-col items-center gap-2"
-  >
-    <FaPhoneAlt className="text-xl text-[#244D3F]" />
-    <span className="text-sm text-gray-700">Call</span>
-  </button>
+            <button
+              onClick={() => handleAction("Call")}
+              className=" cursor-pointer bg-base-300 hover:bg-base-200 w-full py-4 rounded-lg flex flex-col items-center gap-2"
+            >
+              <FaPhoneAlt className="text-xl text-[#244D3F]" />
+              <span className="text-sm text-gray-700">Call</span>
+            </button>
 
-  <button
-    onClick={() => handleAction("Text")}
-    className="bg-base-300 cursor-pointer hover:bg-base-200 w-full py-4 rounded-lg flex flex-col items-center gap-2"
-  >
-    <FaCommentDots className="text-xl text-[#244D3F]" />
-    <span className="text-sm text-gray-700">Text</span>
-  </button>
+            <button
+              onClick={() => handleAction("Text")}
+              className="cursor-pointer bg-base-300 hover:bg-base-200 w-full py-4 rounded-lg flex flex-col items-center gap-2"
+            >
+              <FaCommentDots className="text-xl text-[#244D3F]" />
+              <span className="text-sm text-gray-700">Text</span>
+            </button>
 
-  <button
-    onClick={() => handleAction("Video")}
-    className="bg-base-300 cursor-pointer hover:bg-base-200 w-full py-4 rounded-lg flex flex-col items-center gap-2"
-  >
-    <FaVideo className="text-xl text-[#244D3F]" />
-    <span className="text-sm text-gray-700">Video</span>
-  </button>
+            <button
+              onClick={() => handleAction("Video")}
+              className="cursor-pointer bg-base-300 hover:bg-base-200 w-full py-4 rounded-lg flex flex-col items-center gap-2"
+            >
+              <FaVideo className="text-xl text-[#244D3F]" />
+              <span className="text-sm text-gray-700">Video</span>
+            </button>
 
-</div>
+          </div>
         </div>
 
       </div>
