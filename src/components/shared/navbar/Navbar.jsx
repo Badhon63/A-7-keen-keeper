@@ -11,45 +11,50 @@ const Navbar = () => {
 
   return (
     <nav className="bg-white shadow-sm sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto px-4 md:px-8 py-4 flex justify-between items-center">
+      <div className="max-w-7xl mx-auto px-4 md:px-8 py-4">
 
-        {/* Logo */}
-        <div className="text-2xl font-bold text-[#244D3F]">
-          KeenKeeper
-        </div>
+        {/* MOBILE: stacked layout */}
+        <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3">
 
-        {/* Right Side Links */}
-        <div className="flex items-center gap-3">
+          {/* Logo (top on mobile) */}
+          <div className="text-2xl font-bold text-[#244D3F] text-center sm:text-left">
+            KeenKeeper
+          </div>
 
-          <NavLink
-            to="/"
-            className={({ isActive }) =>
-              `${linkBase} ${isActive ? activeStyle : inactiveStyle}`
-            }
-          >
-            <FaHome />
-            Home
-          </NavLink>
+          {/* Nav Links (bottom on mobile, right on desktop) */}
+          <div className="flex justify-center sm:justify-end items-center gap-3">
 
-          <NavLink
-            to="/timeline"
-            className={({ isActive }) =>
-              `${linkBase} ${isActive ? activeStyle : inactiveStyle}`
-            }
-          >
-            <FaClock />
-            Timeline
-          </NavLink>
+            <NavLink
+              to="/"
+              className={({ isActive }) =>
+                `${linkBase} ${isActive ? activeStyle : inactiveStyle}`
+              }
+            >
+              <FaHome />
+              Home
+            </NavLink>
 
-          <NavLink
-            to="/stats"
-            className={({ isActive }) =>
-              `${linkBase} ${isActive ? activeStyle : inactiveStyle}`
-            }
-          >
-            <FaChartPie />
-            Stats
-          </NavLink>
+            <NavLink
+              to="/timeline"
+              className={({ isActive }) =>
+                `${linkBase} ${isActive ? activeStyle : inactiveStyle}`
+              }
+            >
+              <FaClock />
+              Timeline
+            </NavLink>
+
+            <NavLink
+              to="/stats"
+              className={({ isActive }) =>
+                `${linkBase} ${isActive ? activeStyle : inactiveStyle}`
+              }
+            >
+              <FaChartPie />
+              Stats
+            </NavLink>
+
+          </div>
 
         </div>
       </div>
