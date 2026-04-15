@@ -2,7 +2,7 @@ import { FaUserPlus } from "react-icons/fa";
 
 const Banner = () => {
   return (
-    <div className="text-center py-10 space-y-6">
+    <div className="text-center pt-10 space-y-6">
 
       <h1 className="text-4xl font-bold text-gray-800">
         Friends to keep close in your life
@@ -21,7 +21,7 @@ const Banner = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-6">
 
         <div className="bg-white p-8 rounded-lg shadow flex flex-col items-center">
-          <p className="text-3xl font-bold text-black">8</p>
+          <p className="text-3xl font-bold text-black">6</p>
           <h3 className="text-sm text-gray-500 mt-2">Total Friends</h3>
         </div>
 

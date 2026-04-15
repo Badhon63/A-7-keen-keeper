@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "name": "Sarah Ahmed",
+    "picture": "https://randomuser.me/api/portraits/women/44.jpg",
+    "email": "sarah.ahmed@example.com",
+    "days_since_contact": 12,
+    "status": "overdue",
+    "tags": ["college", "close friend"],
+    "bio": "Met in university during first year. We still talk about late-night study sessions.",
+    "goal": 14,
+    "next_due_date": "2026-04-25"
+  },
+  {
+    "id": 2,
+    "name": "John Smith",
+    "picture": "https://randomuser.me/api/portraits/men/32.jpg",
+    "email": "john.smith@example.com",
+    "days_since_contact": 5,
+    "status": "on-track",
+    "tags": ["work", "colleague"],
+    "bio": "Work friend from my first job. Always helpful and supportive.",
+    "goal": 10,
+    "next_due_date": "2026-04-20"
+  },
+  {
+    "id": 3,
+    "name": "Nusrat Jahan",
+    "picture": "https://randomuser.me/api/portraits/women/65.jpg",
+    "email": "nusrat.jahan@example.com",
+    "days_since_contact": 18,
+    "status": "almost due",
+    "tags": ["school", "best friend"],
+    "bio": "School best friend. We grew up together and share many memories.",
+    "goal": 20,
+    "next_due_date": "2026-04-28"
+  },
+  {
+    "id": 4,
+    "name": "Michael Brown",
+    "picture": "https://randomuser.me/api/portraits/men/41.jpg",
+    "email": "michael.brown@example.com",
+    "days_since_contact": 2,
+    "status": "on-track",
+    "tags": ["gym", "fitness buddy"],
+    "bio": "Gym partner who keeps me motivated to stay consistent.",
+    "goal": 7,
+    "next_due_date": "2026-04-18"
+  },
+  {
+    "id": 5,
+    "name": "Ayesha Khan",
+    "picture": "https://randomuser.me/api/portraits/women/22.jpg",
+    "email": "ayesha.khan@example.com",
+    "days_since_contact": 25,
+    "status": "overdue",
+    "tags": ["family friend"],
+    "bio": "Family friend who has always been like an elder sister.",
+    "goal": 30,
+    "next_due_date": "2026-05-01"
+  },
+  {
+    "id": 6,
+    "name": "David Lee",
+    "picture": "https://randomuser.me/api/portraits/men/55.jpg",
+    "email": "david.lee@example.com",
+    "days_since_contact": 9,
+    "status": "almost due",
+    "tags": ["college", "project partner"],
+    "bio": "Worked together on final year project. Great teamwork experience.",
+    "goal": 12,
+    "next_due_date": "2026-04-22"
+  }
+]
