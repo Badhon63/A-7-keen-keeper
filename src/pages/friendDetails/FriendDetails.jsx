@@ -1,7 +1,11 @@
 import { useLocation } from "react-router-dom";
 import { FaPhoneAlt, FaCommentDots, FaVideo, FaClock, FaArchive, FaTrash } from "react-icons/fa";
+import { toast } from "react-toastify";
 
 const FriendDetails = () => {
+  const handleAction = (type) => {
+    toast.success(`${type} with ${friend.name}`);
+  };
   const { state: friend } = useLocation();
 
   if (!friend) {
@@ -16,13 +20,13 @@ const FriendDetails = () => {
     friend.status === "overdue"
       ? "bg-red-100 text-red-600"
       : friend.status === "almost due"
-      ? "bg-yellow-100 text-yellow-600"
-      : "bg-green-100 text-green-600";
+        ? "bg-yellow-100 text-yellow-600"
+        : "bg-green-100 text-green-600";
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 py-10">
 
-<div className="lg:col-span-1 space-y-4">
+      <div className="lg:col-span-1 space-y-4">
         <div className="bg-white p-6 rounded-lg shadow flex flex-col items-center text-center">
           <img src={friend.picture} className="w-24 h-24 rounded-full" />
 
@@ -51,8 +55,8 @@ const FriendDetails = () => {
         <div className="bg-white p-4 rounded-lg shadow flex flex-col gap-2">
 
           <button className="btn w-full flex items-center gap-2">
-  <FaClock /> Snooze 2 Weeks
-</button>
+            <FaClock /> Snooze 2 Weeks
+          </button>
 
           <button className="btn w-full flex items-center gap-2">
             <FaArchive /> Archive
@@ -66,7 +70,7 @@ const FriendDetails = () => {
 
       </div>
 
-<div className="lg:col-span-2 space-y-6">
+      <div className="lg:col-span-2 space-y-6">
         <div className="grid grid-cols-3 gap-4">
 
           <div className="bg-white p-4 rounded-lg shadow text-center flex flex-col justify-center">
@@ -98,22 +102,31 @@ const FriendDetails = () => {
 
           <div className="grid grid-cols-3 gap-3">
 
-            <button className="bg-base-300 cursor-pointer hover:bg-base-200 w-full py-4 rounded-lg flex flex-col items-center gap-2">
-              <FaPhoneAlt className="text-xl text-[#244D3F]" />
-              <span className="text-sm text-gray-700">Call</span>
-            </button>
+  <button
+    onClick={() => handleAction("Call")}
+    className="bg-base-300 cursor-pointer hover:bg-base-200 w-full py-4 rounded-lg flex flex-col items-center gap-2"
+  >
+    <FaPhoneAlt className="text-xl text-[#244D3F]" />
+    <span className="text-sm text-gray-700">Call</span>
+  </button>
 
-            <button className="bg-base-300 cursor-pointer hover:bg-base-200 w-full py-4 rounded-lg flex flex-col items-center gap-2">
-              <FaCommentDots className="text-xl text-[#244D3F]" />
-              <span className="text-sm text-gray-700">Text</span>
-            </button>
+  <button
+    onClick={() => handleAction("Text")}
+    className="bg-base-300 cursor-pointer hover:bg-base-200 w-full py-4 rounded-lg flex flex-col items-center gap-2"
+  >
+    <FaCommentDots className="text-xl text-[#244D3F]" />
+    <span className="text-sm text-gray-700">Text</span>
+  </button>
 
-            <button className="bg-base-300 cursor-pointer hover:bg-base-200 w-full py-4 rounded-lg flex flex-col items-center gap-2">
-              <FaVideo className="text-xl text-[#244D3F]" />
-              <span className="text-sm text-gray-700">Video</span>
-            </button>
+  <button
+    onClick={() => handleAction("Video")}
+    className="bg-base-300 cursor-pointer hover:bg-base-200 w-full py-4 rounded-lg flex flex-col items-center gap-2"
+  >
+    <FaVideo className="text-xl text-[#244D3F]" />
+    <span className="text-sm text-gray-700">Video</span>
+  </button>
 
-          </div>
+</div>
         </div>
 
       </div>

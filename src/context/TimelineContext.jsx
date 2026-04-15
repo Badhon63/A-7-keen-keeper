@@ -1,19 +1,26 @@
-import { createContext, useState } from "react";
+import { createContext, useContext, useState } from "react";
 
-export const TimelineContext = createContext();
+const TimelineContext = createContext();
 
-const TimelineProvider = ({ children }) => {
+export const TimelineProvider = ({ children }) => {
   const [timeline, setTimeline] = useState([]);
 
-  const addTimeline = (entry) => {
-    setTimeline((prev) => [entry, ...prev]);
+  const addEvent = (type, friendName) => {
+    const newEvent = {
+      id: Date.now(),
+      type,
+      title: `${type} with ${friendName}`,
+      date: new Date().toLocaleDateString(),
+    };
+
+    setTimeline((prev) => [newEvent, ...prev]);
   };
 
   return (
-    <TimelineContext.Provider value={{ timeline, addTimeline }}>
+    <TimelineContext.Provider value={{ timeline, addEvent }}>
       {children}
     </TimelineContext.Provider>
   );
 };
 
-export default TimelineProvider;
+export const useTimeline = () => useContext(TimelineContext);
