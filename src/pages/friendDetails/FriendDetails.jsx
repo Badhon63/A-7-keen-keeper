@@ -76,7 +76,7 @@ const FriendDetails = () => {
       </div>
 
       <div className="lg:col-span-2 space-y-6">
-        <div className="grid grid-cols-3 gap-4">
+        <div className="grid md:grid-cols-3 gap-4">
 
           <div className="bg-white p-4 rounded-lg shadow text-center flex flex-col justify-center">
             <p className="text-2xl font-bold text-gray-800">{friend.days_since_contact}</p>

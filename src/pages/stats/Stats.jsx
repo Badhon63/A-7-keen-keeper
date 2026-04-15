@@ -33,34 +33,43 @@ const Stats = () => {
       {timeline.length === 0 ? (
         <p className="text-gray-500">No interaction data available</p>
       ) : (
-        <div className="relative bg-white p-6 rounded-lg shadow h-[420px]">
+        <div className="relative bg-white p-4 sm:p-6 rounded-lg shadow h-95 sm:h-105">
 
-          {/* TOP RIGHT TEXT */}
-          <div className="absolute top-4 left-4 text-sm text-gray-500 font-medium">
-            By Interaction Type
-          </div>
+  {/* TOP RIGHT TEXT */}
+  <div className="absolute top-3 left-3 text-xs sm:text-sm text-gray-500 font-medium">
+    By Interaction Type
+  </div>
 
-          {/* CHART */}
-          <ResponsiveContainer width="100%" height="100%">
-            <PieChart>
-              <Pie
-                data={data}
-                dataKey="value"
-                nameKey="name"
-                outerRadius={140}
-                label
-              >
-                {data.map((entry, index) => (
-                  <Cell key={`cell-${index}`} fill={COLORS[index]} />
-                ))}
-              </Pie>
+  <ResponsiveContainer width="100%" height="100%">
+    <PieChart>
 
-              <Tooltip />
-              <Legend />
-            </PieChart>
-          </ResponsiveContainer>
+      <Pie
+        data={data}
+        dataKey="value"
+        nameKey="name"
+        cx="50%"
+        cy="50%"
+        innerRadius={0}
+        outerRadius={window.innerWidth < 640 ? 90 : 140}
+        labelLine={false}
+        label={window.innerWidth < 640 ? false : true}
+      >
+        {data.map((entry, index) => (
+          <Cell key={`cell-${index}`} fill={COLORS[index]} />
+        ))}
+      </Pie>
 
-        </div>
+      <Tooltip />
+      <Legend
+        layout="horizontal"
+        verticalAlign="bottom"
+        align="center"
+      />
+
+    </PieChart>
+  </ResponsiveContainer>
+
+</div>
       )}
 
     </div>
