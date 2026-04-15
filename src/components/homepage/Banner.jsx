@@ -26,7 +26,7 @@ const Banner = () => {
         </div>
 
         <div className="bg-white p-8 rounded-lg shadow flex flex-col items-center">
-          <p className="text-3xl font-bold text-black">4</p>
+          <p className="text-3xl font-bold text-black">2</p>
           <h3 className="text-sm text-gray-500 mt-2">On Track</h3>
         </div>
 
